@@ -2,8 +2,8 @@
   "name": "arihant-filling-stationbe",
   "version": "0.1.0",
   "scripts": {
-    "start": "nodemon server.js",
-    "build": "babel -d build"
+    "start": "nodemon src/server.js",
+    "build": "babel src -d build"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
