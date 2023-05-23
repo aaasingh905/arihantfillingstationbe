@@ -144,7 +144,8 @@ function initRoutes(app) {
   });
   app.get("/transactions/:userId", async (req, res) => {
     const userId = req.params.userId;
-    const { page, limit } = req.body;
+    const { page, limit } = req.query;
+    console.log("file: apiRoutes.js:148 > page:", page, limit, userId);
     try {
       const totalCount = await Transactions.countDocuments({ userId: userId });
       const userDetails = await User.findOne({
@@ -166,7 +167,6 @@ function initRoutes(app) {
           userDetails,
           page,
           limit,
-          s,
         });
       } else {
         res.status(201).json({ error: "No transactions found for he user." });
